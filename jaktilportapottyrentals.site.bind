@@ -1,0 +1,29 @@
+$TTL 3600
+@   IN  SOA ns1.server-134-195-90-110.da.direct. admin.jaktilportapottyrentals.site. (
+        2026011701 ; Serial
+        3600       ; Refresh
+        1800       ; Retry
+        604800     ; Expire
+        86400 )    ; Minimum TTL
+
+; Nameservers
+@   IN  NS  ns1.server-134-195-90-110.da.direct.
+@   IN  NS  ns2.server-134-195-90-110.da.direct.
+
+; A Records
+@       IN  A   134.195.90.110
+www     IN  A   134.195.90.110
+ftp     IN  A   134.195.90.110
+mail    IN  A   134.195.90.110
+pop     IN  A   134.195.90.110
+smtp    IN  A   134.195.90.110
+
+; MX Record
+@   IN  MX  10 mail.jaktilportapottyrentals.site.
+
+; TXT Records
+_acme-challenge IN TXT "bim0--SMI00CN6vdNWoobWugtt3KprZWJZC36r"
+
+@ IN TXT "v=spf1 a mx ip4:134.195.90.110 ip6:2605:6402:0:0:0:0:0:0 ~all"
+
+_domainkey IN TXT "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxmpUFcy4FH7Zn+2WLuFlZRdQ3ALC8MpenJP6UmbyGvRay4HPxasZMbAqT0VOx8oL0jsRInDnrAtLQ7IVuNeDbjIBCNaxRQYr+WowCuarrL9Qp6xEmzVAwr1sID59xevyPDbOItEWlDAQAB"
