@@ -37,7 +37,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      <head />
+      <body className={`${inter.className} pb-16 lg:pb-0`}>
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -49,16 +50,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','${GTM_ID}');`,
           }}
         />
-      </head>
-      <body className={`${inter.className} pb-16 lg:pb-0`}>
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+          }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />
