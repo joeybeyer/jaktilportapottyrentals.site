@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { SITE_NAME, PHONE_NUMBER_LINK, PHONE_NUMBER_DISPLAY, CITIES, SERVICES } from '@/lib/constants'
+import { SITE_NAME, PHONE_NUMBER_LINK, PHONE_NUMBER_DISPLAY, CITIES, SERVICES, BUSINESS_ADDRESS } from '@/lib/constants'
 
 export default function Footer() {
   return (
@@ -11,6 +11,10 @@ export default function Footer() {
             <p className="text-gray-300 mb-4">
               Fast, affordable porta potty rental in Austin, TX with same-day delivery for events, weddings, construction sites, and parties.
             </p>
+            <address className="text-gray-300 not-italic mb-4">
+              <p>{BUSINESS_ADDRESS.street}</p>
+              <p>{BUSINESS_ADDRESS.city}, {BUSINESS_ADDRESS.state} {BUSINESS_ADDRESS.zip}</p>
+            </address>
             <a
               href={PHONE_NUMBER_LINK}
               className="inline-flex items-center gap-2 text-accent hover:text-teal-300 font-semibold"
