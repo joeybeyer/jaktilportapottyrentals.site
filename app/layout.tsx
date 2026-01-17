@@ -37,11 +37,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head />
-      <body className={`${inter.className} pb-16 lg:pb-0`}>
+      <head>
         <Script
           id="gtm-script"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -50,11 +49,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','${GTM_ID}');`,
           }}
         />
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-          }}
-        />
+      </head>
+      <body className={`${inter.className} pb-16 lg:pb-0`}>
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <Header />
         <main>{children}</main>
         <Footer />
