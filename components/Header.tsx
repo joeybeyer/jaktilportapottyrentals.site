@@ -18,21 +18,19 @@ export default function Header() {
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
-            <div className="relative group">
-              <button
-                className="nav-link flex items-center gap-1"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
-              >
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button className="nav-link flex items-center gap-1 py-6">
                 Services
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <div
-                className={`absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg py-2 mt-1 ${servicesOpen ? 'block' : 'hidden'} group-hover:block`}
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
+                className={`absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg py-2 ${servicesOpen ? 'block' : 'hidden'}`}
               >
                 {SERVICES.map((service) => (
                   <Link
@@ -47,21 +45,19 @@ export default function Header() {
               </div>
             </div>
 
-            <div className="relative group">
-              <button
-                className="nav-link flex items-center gap-1"
-                onMouseEnter={() => setLocationsOpen(true)}
-                onMouseLeave={() => setLocationsOpen(false)}
-              >
+            <div
+              className="relative"
+              onMouseEnter={() => setLocationsOpen(true)}
+              onMouseLeave={() => setLocationsOpen(false)}
+            >
+              <button className="nav-link flex items-center gap-1 py-6">
                 Locations
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <div
-                className={`absolute top-full left-0 w-56 bg-white shadow-lg rounded-lg py-2 mt-1 ${locationsOpen ? 'block' : 'hidden'} group-hover:block`}
-                onMouseEnter={() => setLocationsOpen(true)}
-                onMouseLeave={() => setLocationsOpen(false)}
+                className={`absolute top-full left-0 w-56 bg-white shadow-lg rounded-lg py-2 ${locationsOpen ? 'block' : 'hidden'}`}
               >
                 {CITIES.map((city) => (
                   <Link
